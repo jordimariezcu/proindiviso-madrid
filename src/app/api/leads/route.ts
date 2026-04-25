@@ -74,8 +74,21 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const lead: Lead = body
 
-    if (!lead.nombre || !lead.telefono || !lead.municipio) {
+    if (
+      typeof lead.nombre !== 'string' || !lead.nombre.trim() ||
+      typeof lead.telefono !== 'string' || !lead.telefono.trim() ||
+      typeof lead.municipio !== 'string' || !lead.municipio.trim()
+    ) {
       return NextResponse.json({ error: 'Faltan campos obligatorios' }, { status: 400 })
+    }
+
+    if (
+      typeof lead.valor_inmueble !== 'number' || lead.valor_inmueble <= 0 ||
+      typeof lead.porcentaje !== 'number' || lead.porcentaje < 1 || lead.porcentaje > 99 ||
+      typeof lead.descuento !== 'number' || lead.descuento < 0 || lead.descuento > 1 ||
+      typeof lead.valor_estimado !== 'number' || lead.valor_estimado < 0
+    ) {
+      return NextResponse.json({ error: 'Datos de valoración inválidos' }, { status: 400 })
     }
 
     const leadId = generateLeadId()

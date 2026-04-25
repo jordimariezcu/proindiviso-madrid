@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { municipios } from '@/lib/municipios'
 import Calculadora from '@/components/Calculadora'
 import FAQ from '@/components/FAQ'
+import { TELEFONO_HREF } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: 'Proindiviso Madrid — Calcula el valor de tu parte y habla con un abogado gratis',
@@ -19,7 +20,7 @@ export default function HomePage() {
         <span className="text-xs text-blue-600 font-medium uppercase tracking-widest">Comunidad de Madrid</span>
       </div>
       <h1 className="text-3xl font-semibold text-gray-900 mb-3 leading-tight">
-        Proindiviso en Madrid:<br />calcula el valor de tu parte gratis
+        Proindiviso en Madrid: calcula el valor de tu parte gratis
       </h1>
       <p className="text-gray-500 text-base leading-relaxed mb-8">
         ¿Tienes un piso o local en proindiviso y no sabes qué vale tu parte?
@@ -60,7 +61,7 @@ export default function HomePage() {
       <section className="mt-12 bg-blue-50 rounded-xl p-6 text-center">
         <p className="text-lg font-semibold text-gray-900 mb-1">¿Tienes dudas? Te llamamos</p>
         <p className="text-sm text-gray-500 mb-4">Consulta gratuita con nuestro abogado especialista en proindivisos.</p>
-        <a href="tel:+34900000000" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
+        <a href={`tel:${TELEFONO_HREF}`} className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
           Llamar gratis
         </a>
       </section>

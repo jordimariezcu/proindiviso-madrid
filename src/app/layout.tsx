@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { TELEFONO_HREF, TELEFONO_DISPLAY } from '@/lib/config'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://proindiviso-madrid.es'),
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/" className="font-semibold text-gray-900 text-base">
               Proindiviso<span className="text-blue-600">Madrid</span>
             </a>
-            <a href="tel:+34900000000" className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+            <a href={`tel:${TELEFONO_HREF}`} className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
               Llamada gratuita
             </a>
           </div>

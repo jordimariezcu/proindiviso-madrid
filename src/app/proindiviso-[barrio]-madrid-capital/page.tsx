@@ -4,6 +4,7 @@ import { getBarrio, getAllBarrioSlugs, getBarriosByDistrito } from '@/lib/barrio
 import Calculadora from '@/components/Calculadora'
 import FAQ from '@/components/FAQ'
 import Link from 'next/link'
+import { TELEFONO_HREF } from '@/lib/config'
 
 interface Props {
   params: Promise<{ barrio: string }>
@@ -134,7 +135,7 @@ export default async function BarrioPage({ params }: Props) {
         <p className="text-sm text-gray-500 mb-4">
           Nuestro abogado especialista en {b.nombre} te atiende sin compromiso.
         </p>
-        <a href="tel:+34900000000"
+        <a href={`tel:${TELEFONO_HREF}`}
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
           Llamar ahora
         </a>

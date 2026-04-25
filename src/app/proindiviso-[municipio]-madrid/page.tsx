@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getMunicipio, getAllSlugs } from '@/lib/municipios'
 import Calculadora from '@/components/Calculadora'
 import FAQ from '@/components/FAQ'
+import { TELEFONO_HREF } from '@/lib/config'
 
 interface Props {
   params: Promise<{ municipio: string }>
@@ -95,7 +96,7 @@ export default async function MunicipioPage({ params }: Props) {
         <p className="text-sm text-gray-500 mb-4">
           Nuestro abogado especialista en {m.nombre} te atiende sin compromiso.
         </p>
-        <a href="tel:+34900000000"
+        <a href={`tel:${TELEFONO_HREF}`}
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
           Llamar ahora
         </a>

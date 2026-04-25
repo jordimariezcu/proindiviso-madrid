@@ -55,6 +55,10 @@ export default function Calculadora({ municipio }: Props) {
       setError('Introduce tu nombre y teléfono para desbloquear el informe.')
       return
     }
+    if (!/^(\+34|0034)?[679]\d{8}$/.test(telefono.replace(/\s/g, ''))) {
+      setError('Introduce un teléfono español válido (9 dígitos, empieza por 6, 7 o 9).')
+      return
+    }
     setLoading(true)
     setError('')
 
@@ -98,10 +102,11 @@ export default function Calculadora({ municipio }: Props) {
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">€</span>
           <input
-            type="number"
+            type="text"
+            inputMode="numeric"
             value={valor}
             onChange={e => setValor(e.target.value)}
-            placeholder="250000"
+            placeholder="250.000"
             className="w-full pl-8 pr-4 py-2.5 border border-gray-200 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>

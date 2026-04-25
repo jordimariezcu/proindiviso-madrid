@@ -8,10 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/proindiviso-madrid`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/disolucion-proindiviso`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/vender-proindiviso`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/proindiviso-herencia`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ]
 
   const municipioPages: MetadataRoute.Sitemap = municipios.map(m => ({
