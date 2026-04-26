@@ -97,18 +97,14 @@ export default async function SlugPage({ params }: Props) {
         </p>
 
         {/* Stat cards */}
-        <div className="grid grid-cols-3 gap-3 mb-8">
-          <div className="bg-navy rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-white">{b.precio_m2.toLocaleString('es-ES')}€</p>
-            <p className="text-xs text-white/60 mt-1">Precio medio/m²</p>
+        <div className="flex gap-3 mb-8">
+          <div className="bg-navy rounded-lg px-4 py-3 flex items-center gap-3">
+            <p className="text-lg font-bold text-white">{b.precio_m2.toLocaleString('es-ES')}€/m²</p>
+            <p className="text-xs text-white/50">Precio medio zona</p>
           </div>
-          <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-navy">{(b.precio_m2 * 80).toLocaleString('es-ES')}€</p>
-            <p className="text-xs text-gray-400 mt-1">Valor piso 80m²</p>
-          </div>
-          <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-            <p className="text-2xl font-bold text-gold">30–50%</p>
-            <p className="text-xs text-gray-400 mt-1">Descuento proindiviso</p>
+          <div className="bg-white border border-gray-200 rounded-lg px-4 py-3 flex items-center gap-3">
+            <p className="text-lg font-bold text-navy">{(b.precio_m2 * 80).toLocaleString('es-ES')}€</p>
+            <p className="text-xs text-gray-400">Valor estimado 80m²</p>
           </div>
         </div>
 
