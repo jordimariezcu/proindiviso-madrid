@@ -218,6 +218,13 @@ export default async function SlugPage({ params }: Props) {
     return (
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
+        <nav className="text-xs text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-navy transition-colors">Inicio</Link>
+          <span className="mx-2">›</span>
+          <Link href="/municipios-madrid" className="hover:text-navy transition-colors">Municipios de Madrid</Link>
+          <span className="mx-2">›</span>
+          <span className="text-navy font-medium">{m.nombre}</span>
+        </nav>
         <div className="mb-2">
           <span className="text-xs text-navy font-semibold uppercase tracking-widest">{m.nombre} · Madrid</span>
         </div>

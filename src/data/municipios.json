@@ -1,52 +1,877 @@
 [
-  { "slug": "madrid", "nombre": "Madrid", "provincia": "Madrid", "poblacion": 3305408, "juzgado": "Juzgados de Primera Instancia de Madrid" },
-  { "slug": "mostoles", "nombre": "Móstoles", "provincia": "Madrid", "poblacion": 208000, "juzgado": "Juzgado de Primera Instancia de Móstoles" },
-  { "slug": "alcala-de-henares", "nombre": "Alcalá de Henares", "provincia": "Madrid", "poblacion": 197000, "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares" },
-  { "slug": "fuenlabrada", "nombre": "Fuenlabrada", "provincia": "Madrid", "poblacion": 196000, "juzgado": "Juzgado de Primera Instancia de Fuenlabrada" },
-  { "slug": "leganes", "nombre": "Leganés", "provincia": "Madrid", "poblacion": 188000, "juzgado": "Juzgado de Primera Instancia de Leganés" },
-  { "slug": "getafe", "nombre": "Getafe", "provincia": "Madrid", "poblacion": 185000, "juzgado": "Juzgado de Primera Instancia de Getafe" },
-  { "slug": "alcorcon", "nombre": "Alcorcón", "provincia": "Madrid", "poblacion": 168000, "juzgado": "Juzgado de Primera Instancia de Alcorcón" },
-  { "slug": "torrejon-de-ardoz", "nombre": "Torrejón de Ardoz", "provincia": "Madrid", "poblacion": 132000, "juzgado": "Juzgado de Primera Instancia de Torrejón de Ardoz" },
-  { "slug": "parla", "nombre": "Parla", "provincia": "Madrid", "poblacion": 128000, "juzgado": "Juzgado de Primera Instancia de Parla" },
-  { "slug": "alcobendas", "nombre": "Alcobendas", "provincia": "Madrid", "poblacion": 118000, "juzgado": "Juzgado de Primera Instancia de Alcobendas" },
-  { "slug": "rivas-vaciamadrid", "nombre": "Rivas-Vaciamadrid", "provincia": "Madrid", "poblacion": 90000, "juzgado": "Juzgado de Primera Instancia de Arganda del Rey" },
-  { "slug": "colmenar-viejo", "nombre": "Colmenar Viejo", "provincia": "Madrid", "poblacion": 48000, "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo" },
-  { "slug": "las-rozas-de-madrid", "nombre": "Las Rozas de Madrid", "provincia": "Madrid", "poblacion": 97000, "juzgado": "Juzgado de Primera Instancia de Las Rozas" },
-  { "slug": "pozuelo-de-alarcon", "nombre": "Pozuelo de Alarcón", "provincia": "Madrid", "poblacion": 87000, "juzgado": "Juzgado de Primera Instancia de Pozuelo de Alarcón" },
-  { "slug": "san-sebastian-de-los-reyes", "nombre": "San Sebastián de los Reyes", "provincia": "Madrid", "poblacion": 85000, "juzgado": "Juzgado de Primera Instancia de San Sebastián de los Reyes" },
-  { "slug": "arganda-del-rey", "nombre": "Arganda del Rey", "provincia": "Madrid", "poblacion": 57000, "juzgado": "Juzgado de Primera Instancia de Arganda del Rey" },
-  { "slug": "coslada", "nombre": "Coslada", "provincia": "Madrid", "poblacion": 87000, "juzgado": "Juzgado de Primera Instancia de Coslada" },
-  { "slug": "valdemoro", "nombre": "Valdemoro", "provincia": "Madrid", "poblacion": 75000, "juzgado": "Juzgado de Primera Instancia de Valdemoro" },
-  { "slug": "aranjuez", "nombre": "Aranjuez", "provincia": "Madrid", "poblacion": 57000, "juzgado": "Juzgado de Primera Instancia de Aranjuez" },
-  { "slug": "majadahonda", "nombre": "Majadahonda", "provincia": "Madrid", "poblacion": 73000, "juzgado": "Juzgado de Primera Instancia de Majadahonda" },
-  { "slug": "tres-cantos", "nombre": "Tres Cantos", "provincia": "Madrid", "poblacion": 46000, "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo" },
-  { "slug": "pinto", "nombre": "Pinto", "provincia": "Madrid", "poblacion": 51000, "juzgado": "Juzgado de Primera Instancia de Valdemoro" },
-  { "slug": "boadilla-del-monte", "nombre": "Boadilla del Monte", "provincia": "Madrid", "poblacion": 52000, "juzgado": "Juzgado de Primera Instancia de Majadahonda" },
-  { "slug": "collado-villalba", "nombre": "Collado Villalba", "provincia": "Madrid", "poblacion": 64000, "juzgado": "Juzgado de Primera Instancia de Collado Villalba" },
-  { "slug": "galapagar", "nombre": "Galapagar", "provincia": "Madrid", "poblacion": 33000, "juzgado": "Juzgado de Primera Instancia de Collado Villalba" },
-  { "slug": "navalcarnero", "nombre": "Navalcarnero", "provincia": "Madrid", "poblacion": 28000, "juzgado": "Juzgado de Primera Instancia de Navalcarnero" },
-  { "slug": "san-fernando-de-henares", "nombre": "San Fernando de Henares", "provincia": "Madrid", "poblacion": 43000, "juzgado": "Juzgado de Primera Instancia de Coslada" },
-  { "slug": "algete", "nombre": "Algete", "provincia": "Madrid", "poblacion": 22000, "juzgado": "Juzgado de Primera Instancia de Alcobendas" },
-  { "slug": "el-escorial", "nombre": "El Escorial", "provincia": "Madrid", "poblacion": 16000, "juzgado": "Juzgado de Primera Instancia de El Escorial" },
-  { "slug": "meco", "nombre": "Meco", "provincia": "Madrid", "poblacion": 12000, "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares" },
-  { "slug": "daganzo-de-arriba", "nombre": "Daganzo de Arriba", "provincia": "Madrid", "poblacion": 9000, "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares" },
-  { "slug": "ciempozuelos", "nombre": "Ciempozuelos", "provincia": "Madrid", "poblacion": 24000, "juzgado": "Juzgado de Primera Instancia de Aranjuez" },
-  { "slug": "torrelodones", "nombre": "Torrelodones", "provincia": "Madrid", "poblacion": 24000, "juzgado": "Juzgado de Primera Instancia de Las Rozas" },
-  { "slug": "paracuellos-de-jarama", "nombre": "Paracuellos de Jarama", "provincia": "Madrid", "poblacion": 22000, "juzgado": "Juzgado de Primera Instancia de Alcobendas" },
-  { "slug": "brunete", "nombre": "Brunete", "provincia": "Madrid", "poblacion": 13000, "juzgado": "Juzgado de Primera Instancia de Navalcarnero" },
-  { "slug": "villa-del-prado", "nombre": "Villa del Prado", "provincia": "Madrid", "poblacion": 7500, "juzgado": "Juzgado de Primera Instancia de Navalcarnero" },
-  { "slug": "el-molar", "nombre": "El Molar", "provincia": "Madrid", "poblacion": 7000, "juzgado": "Juzgado de Primera Instancia de San Sebastián de los Reyes" },
-  { "slug": "nuevo-baztan", "nombre": "Nuevo Baztán", "provincia": "Madrid", "poblacion": 6000, "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares" },
-  { "slug": "guadalix-de-la-sierra", "nombre": "Guadalix de la Sierra", "provincia": "Madrid", "poblacion": 5000, "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo" },
-  { "slug": "moralzarzal", "nombre": "Moralzarzal", "provincia": "Madrid", "poblacion": 13000, "juzgado": "Juzgado de Primera Instancia de Collado Villalba" },
-  { "slug": "guadarrama", "nombre": "Guadarrama", "provincia": "Madrid", "poblacion": 17000, "juzgado": "Juzgado de Primera Instancia de El Escorial" },
-  { "slug": "alpedrete", "nombre": "Alpedrete", "provincia": "Madrid", "poblacion": 14000, "juzgado": "Juzgado de Primera Instancia de Collado Villalba" },
-  { "slug": "sevilla-la-nueva", "nombre": "Sevilla la Nueva", "provincia": "Madrid", "poblacion": 11000, "juzgado": "Juzgado de Primera Instancia de Navalcarnero" },
-  { "slug": "villarejo-de-salvanes", "nombre": "Villarejo de Salvanés", "provincia": "Madrid", "poblacion": 8000, "juzgado": "Juzgado de Primera Instancia de Arganda del Rey" },
-  { "slug": "campo-real", "nombre": "Campo Real", "provincia": "Madrid", "poblacion": 5500, "juzgado": "Juzgado de Primera Instancia de Arganda del Rey" },
-  { "slug": "chinchon", "nombre": "Chinchón", "provincia": "Madrid", "poblacion": 5200, "juzgado": "Juzgado de Primera Instancia de Aranjuez" },
-  { "slug": "titulcia", "nombre": "Titulcia", "provincia": "Madrid", "poblacion": 1800, "juzgado": "Juzgado de Primera Instancia de Aranjuez" },
-  { "slug": "tielmes", "nombre": "Tielmes", "provincia": "Madrid", "poblacion": 1900, "juzgado": "Juzgado de Primera Instancia de Arganda del Rey" },
-  { "slug": "valdeavero", "nombre": "Valdeavero", "provincia": "Madrid", "poblacion": 1200, "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares" },
-  { "slug": "pedrezuela", "nombre": "Pedrezuela", "provincia": "Madrid", "poblacion": 3500, "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo" }
+  {
+    "slug": "madrid",
+    "nombre": "Madrid",
+    "provincia": "Madrid",
+    "poblacion": 3305408,
+    "juzgado": "Juzgados de Primera Instancia de Madrid"
+  },
+  {
+    "slug": "mostoles",
+    "nombre": "Móstoles",
+    "provincia": "Madrid",
+    "poblacion": 208000,
+    "juzgado": "Juzgado de Primera Instancia de Móstoles"
+  },
+  {
+    "slug": "alcala-de-henares",
+    "nombre": "Alcalá de Henares",
+    "provincia": "Madrid",
+    "poblacion": 197000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "fuenlabrada",
+    "nombre": "Fuenlabrada",
+    "provincia": "Madrid",
+    "poblacion": 196000,
+    "juzgado": "Juzgado de Primera Instancia de Fuenlabrada"
+  },
+  {
+    "slug": "leganes",
+    "nombre": "Leganés",
+    "provincia": "Madrid",
+    "poblacion": 188000,
+    "juzgado": "Juzgado de Primera Instancia de Leganés"
+  },
+  {
+    "slug": "getafe",
+    "nombre": "Getafe",
+    "provincia": "Madrid",
+    "poblacion": 185000,
+    "juzgado": "Juzgado de Primera Instancia de Getafe"
+  },
+  {
+    "slug": "alcorcon",
+    "nombre": "Alcorcón",
+    "provincia": "Madrid",
+    "poblacion": 168000,
+    "juzgado": "Juzgado de Primera Instancia de Alcorcón"
+  },
+  {
+    "slug": "torrejon-de-ardoz",
+    "nombre": "Torrejón de Ardoz",
+    "provincia": "Madrid",
+    "poblacion": 132000,
+    "juzgado": "Juzgado de Primera Instancia de Torrejón de Ardoz"
+  },
+  {
+    "slug": "parla",
+    "nombre": "Parla",
+    "provincia": "Madrid",
+    "poblacion": 128000,
+    "juzgado": "Juzgado de Primera Instancia de Parla"
+  },
+  {
+    "slug": "alcobendas",
+    "nombre": "Alcobendas",
+    "provincia": "Madrid",
+    "poblacion": 118000,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "rivas-vaciamadrid",
+    "nombre": "Rivas-Vaciamadrid",
+    "provincia": "Madrid",
+    "poblacion": 90000,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "colmenar-viejo",
+    "nombre": "Colmenar Viejo",
+    "provincia": "Madrid",
+    "poblacion": 48000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "las-rozas-de-madrid",
+    "nombre": "Las Rozas de Madrid",
+    "provincia": "Madrid",
+    "poblacion": 97000,
+    "juzgado": "Juzgado de Primera Instancia de Las Rozas"
+  },
+  {
+    "slug": "pozuelo-de-alarcon",
+    "nombre": "Pozuelo de Alarcón",
+    "provincia": "Madrid",
+    "poblacion": 87000,
+    "juzgado": "Juzgado de Primera Instancia de Pozuelo de Alarcón"
+  },
+  {
+    "slug": "san-sebastian-de-los-reyes",
+    "nombre": "San Sebastián de los Reyes",
+    "provincia": "Madrid",
+    "poblacion": 85000,
+    "juzgado": "Juzgado de Primera Instancia de San Sebastián de los Reyes"
+  },
+  {
+    "slug": "arganda-del-rey",
+    "nombre": "Arganda del Rey",
+    "provincia": "Madrid",
+    "poblacion": 57000,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "coslada",
+    "nombre": "Coslada",
+    "provincia": "Madrid",
+    "poblacion": 87000,
+    "juzgado": "Juzgado de Primera Instancia de Coslada"
+  },
+  {
+    "slug": "valdemoro",
+    "nombre": "Valdemoro",
+    "provincia": "Madrid",
+    "poblacion": 75000,
+    "juzgado": "Juzgado de Primera Instancia de Valdemoro"
+  },
+  {
+    "slug": "aranjuez",
+    "nombre": "Aranjuez",
+    "provincia": "Madrid",
+    "poblacion": 57000,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "majadahonda",
+    "nombre": "Majadahonda",
+    "provincia": "Madrid",
+    "poblacion": 73000,
+    "juzgado": "Juzgado de Primera Instancia de Majadahonda"
+  },
+  {
+    "slug": "tres-cantos",
+    "nombre": "Tres Cantos",
+    "provincia": "Madrid",
+    "poblacion": 46000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "pinto",
+    "nombre": "Pinto",
+    "provincia": "Madrid",
+    "poblacion": 51000,
+    "juzgado": "Juzgado de Primera Instancia de Valdemoro"
+  },
+  {
+    "slug": "boadilla-del-monte",
+    "nombre": "Boadilla del Monte",
+    "provincia": "Madrid",
+    "poblacion": 52000,
+    "juzgado": "Juzgado de Primera Instancia de Majadahonda"
+  },
+  {
+    "slug": "collado-villalba",
+    "nombre": "Collado Villalba",
+    "provincia": "Madrid",
+    "poblacion": 64000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "galapagar",
+    "nombre": "Galapagar",
+    "provincia": "Madrid",
+    "poblacion": 33000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "navalcarnero",
+    "nombre": "Navalcarnero",
+    "provincia": "Madrid",
+    "poblacion": 28000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "san-fernando-de-henares",
+    "nombre": "San Fernando de Henares",
+    "provincia": "Madrid",
+    "poblacion": 43000,
+    "juzgado": "Juzgado de Primera Instancia de Coslada"
+  },
+  {
+    "slug": "algete",
+    "nombre": "Algete",
+    "provincia": "Madrid",
+    "poblacion": 22000,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "el-escorial",
+    "nombre": "El Escorial",
+    "provincia": "Madrid",
+    "poblacion": 16000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "meco",
+    "nombre": "Meco",
+    "provincia": "Madrid",
+    "poblacion": 12000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "daganzo-de-arriba",
+    "nombre": "Daganzo de Arriba",
+    "provincia": "Madrid",
+    "poblacion": 9000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "ciempozuelos",
+    "nombre": "Ciempozuelos",
+    "provincia": "Madrid",
+    "poblacion": 24000,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "torrelodones",
+    "nombre": "Torrelodones",
+    "provincia": "Madrid",
+    "poblacion": 24000,
+    "juzgado": "Juzgado de Primera Instancia de Las Rozas"
+  },
+  {
+    "slug": "paracuellos-de-jarama",
+    "nombre": "Paracuellos de Jarama",
+    "provincia": "Madrid",
+    "poblacion": 22000,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "brunete",
+    "nombre": "Brunete",
+    "provincia": "Madrid",
+    "poblacion": 13000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "villa-del-prado",
+    "nombre": "Villa del Prado",
+    "provincia": "Madrid",
+    "poblacion": 7500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "el-molar",
+    "nombre": "El Molar",
+    "provincia": "Madrid",
+    "poblacion": 7000,
+    "juzgado": "Juzgado de Primera Instancia de San Sebastián de los Reyes"
+  },
+  {
+    "slug": "nuevo-baztan",
+    "nombre": "Nuevo Baztán",
+    "provincia": "Madrid",
+    "poblacion": 6000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "guadalix-de-la-sierra",
+    "nombre": "Guadalix de la Sierra",
+    "provincia": "Madrid",
+    "poblacion": 5000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "moralzarzal",
+    "nombre": "Moralzarzal",
+    "provincia": "Madrid",
+    "poblacion": 13000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "guadarrama",
+    "nombre": "Guadarrama",
+    "provincia": "Madrid",
+    "poblacion": 17000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "alpedrete",
+    "nombre": "Alpedrete",
+    "provincia": "Madrid",
+    "poblacion": 14000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "sevilla-la-nueva",
+    "nombre": "Sevilla la Nueva",
+    "provincia": "Madrid",
+    "poblacion": 11000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "villarejo-de-salvanes",
+    "nombre": "Villarejo de Salvanés",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "campo-real",
+    "nombre": "Campo Real",
+    "provincia": "Madrid",
+    "poblacion": 5500,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "chinchon",
+    "nombre": "Chinchón",
+    "provincia": "Madrid",
+    "poblacion": 5200,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "titulcia",
+    "nombre": "Titulcia",
+    "provincia": "Madrid",
+    "poblacion": 1800,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "tielmes",
+    "nombre": "Tielmes",
+    "provincia": "Madrid",
+    "poblacion": 1900,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "valdeavero",
+    "nombre": "Valdeavero",
+    "provincia": "Madrid",
+    "poblacion": 1200,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "pedrezuela",
+    "nombre": "Pedrezuela",
+    "provincia": "Madrid",
+    "poblacion": 3500,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "villaviciosa-de-odon",
+    "nombre": "Villaviciosa de Odón",
+    "provincia": "Madrid",
+    "poblacion": 30000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "arroyomolinos",
+    "nombre": "Arroyomolinos",
+    "provincia": "Madrid",
+    "poblacion": 26000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "villanueva-de-la-canada",
+    "nombre": "Villanueva de la Cañada",
+    "provincia": "Madrid",
+    "poblacion": 21000,
+    "juzgado": "Juzgado de Primera Instancia de Majadahonda"
+  },
+  {
+    "slug": "humanes-de-madrid",
+    "nombre": "Humanes de Madrid",
+    "provincia": "Madrid",
+    "poblacion": 22000,
+    "juzgado": "Juzgado de Primera Instancia de Leganés"
+  },
+  {
+    "slug": "mejorada-del-campo",
+    "nombre": "Mejorada del Campo",
+    "provincia": "Madrid",
+    "poblacion": 22000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "san-martin-de-la-vega",
+    "nombre": "San Martín de la Vega",
+    "provincia": "Madrid",
+    "poblacion": 20000,
+    "juzgado": "Juzgado de Primera Instancia de Valdemoro"
+  },
+  {
+    "slug": "villanueva-del-pardillo",
+    "nombre": "Villanueva del Pardillo",
+    "provincia": "Madrid",
+    "poblacion": 18000,
+    "juzgado": "Juzgado de Primera Instancia de Majadahonda"
+  },
+  {
+    "slug": "san-lorenzo-de-el-escorial",
+    "nombre": "San Lorenzo de El Escorial",
+    "provincia": "Madrid",
+    "poblacion": 18000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "torrejon-de-la-calzada",
+    "nombre": "Torrejón de la Calzada",
+    "provincia": "Madrid",
+    "poblacion": 14000,
+    "juzgado": "Juzgado de Primera Instancia de Getafe"
+  },
+  {
+    "slug": "collado-mediano",
+    "nombre": "Collado Mediano",
+    "provincia": "Madrid",
+    "poblacion": 12000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "el-alamo",
+    "nombre": "El Álamo",
+    "provincia": "Madrid",
+    "poblacion": 11000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "soto-del-real",
+    "nombre": "Soto del Real",
+    "provincia": "Madrid",
+    "poblacion": 10000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "torrejon-de-velasco",
+    "nombre": "Torrejón de Velasco",
+    "provincia": "Madrid",
+    "poblacion": 11000,
+    "juzgado": "Juzgado de Primera Instancia de Valdemoro"
+  },
+  {
+    "slug": "colmenar-de-oreja",
+    "nombre": "Colmenar de Oreja",
+    "provincia": "Madrid",
+    "poblacion": 9000,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "grinon",
+    "nombre": "Griñón",
+    "provincia": "Madrid",
+    "poblacion": 9000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "manzanares-el-real",
+    "nombre": "Manzanares el Real",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "cubas-de-la-sagra",
+    "nombre": "Cubas de la Sagra",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "camarma-de-esteruelas",
+    "nombre": "Camarma de Esteruelas",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "colmenarejo",
+    "nombre": "Colmenarejo",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "loeches",
+    "nombre": "Loeches",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "morata-de-tajuna",
+    "nombre": "Morata de Tajuña",
+    "provincia": "Madrid",
+    "poblacion": 7500,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "hoyo-de-manzanares",
+    "nombre": "Hoyo de Manzanares",
+    "provincia": "Madrid",
+    "poblacion": 7000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "becerril-de-la-sierra",
+    "nombre": "Becerril de la Sierra",
+    "provincia": "Madrid",
+    "poblacion": 7000,
+    "juzgado": "Juzgado de Primera Instancia de Collado Villalba"
+  },
+  {
+    "slug": "cercedilla",
+    "nombre": "Cercedilla",
+    "provincia": "Madrid",
+    "poblacion": 7000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "navas-del-rey",
+    "nombre": "Navas del Rey",
+    "provincia": "Madrid",
+    "poblacion": 6500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "san-martin-de-valdeiglesias",
+    "nombre": "San Martín de Valdeiglesias",
+    "provincia": "Madrid",
+    "poblacion": 8000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "cobena",
+    "nombre": "Cobeña",
+    "provincia": "Madrid",
+    "poblacion": 5000,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "los-molinos",
+    "nombre": "Los Molinos",
+    "provincia": "Madrid",
+    "poblacion": 5000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "san-agustin-del-guadalix",
+    "nombre": "San Agustín del Guadalix",
+    "provincia": "Madrid",
+    "poblacion": 5000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "ajalvir",
+    "nombre": "Ajalvir",
+    "provincia": "Madrid",
+    "poblacion": 4500,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "robledo-de-chavela",
+    "nombre": "Robledo de Chavela",
+    "provincia": "Madrid",
+    "poblacion": 4000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "torres-de-la-alameda",
+    "nombre": "Torres de la Alameda",
+    "provincia": "Madrid",
+    "poblacion": 4000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "talamanca-de-jarama",
+    "nombre": "Talamanca de Jarama",
+    "provincia": "Madrid",
+    "poblacion": 3500,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "serranillos-del-valle",
+    "nombre": "Serranillos del Valle",
+    "provincia": "Madrid",
+    "poblacion": 3500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "cadalso-de-los-vidrios",
+    "nombre": "Cadalso de los Vidrios",
+    "provincia": "Madrid",
+    "poblacion": 3500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "estremera",
+    "nombre": "Estremera",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "miraflores-de-la-sierra",
+    "nombre": "Miraflores de la Sierra",
+    "provincia": "Madrid",
+    "poblacion": 5500,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "quijorna",
+    "nombre": "Quijorna",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "valdeolmos-alalpardo",
+    "nombre": "Valdeolmos-Alalpardo",
+    "provincia": "Madrid",
+    "poblacion": 4000,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "batres",
+    "nombre": "Batres",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "moraleja-de-enmedio",
+    "nombre": "Moraleja de Enmedio",
+    "provincia": "Madrid",
+    "poblacion": 3500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "chapineria",
+    "nombre": "Chapinería",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "aldea-del-fresno",
+    "nombre": "Aldea del Fresno",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "pelayos-de-la-presa",
+    "nombre": "Pelayos de la Presa",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "navalagamella",
+    "nombre": "Navalagamella",
+    "provincia": "Madrid",
+    "poblacion": 1500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "los-santos-de-la-humosa",
+    "nombre": "Los Santos de la Humosa",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "villanueva-de-perales",
+    "nombre": "Villanueva de Perales",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "villamanta",
+    "nombre": "Villamanta",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "carabana",
+    "nombre": "Carabaña",
+    "provincia": "Madrid",
+    "poblacion": 1500,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "perales-de-tajuna",
+    "nombre": "Perales de Tajuña",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "valdilecha",
+    "nombre": "Valdilecha",
+    "provincia": "Madrid",
+    "poblacion": 1500,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "orusco-de-tajuna",
+    "nombre": "Orusco de Tajuña",
+    "provincia": "Madrid",
+    "poblacion": 1000,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "belmonte-de-tajo",
+    "nombre": "Belmonte de Tajo",
+    "provincia": "Madrid",
+    "poblacion": 1500,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "valdelaguna",
+    "nombre": "Valdelaguna",
+    "provincia": "Madrid",
+    "poblacion": 800,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "anchuelo",
+    "nombre": "Anchuelo",
+    "provincia": "Madrid",
+    "poblacion": 1200,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "santorcaz",
+    "nombre": "Santorcaz",
+    "provincia": "Madrid",
+    "poblacion": 1200,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "fresno-de-torote",
+    "nombre": "Fresno de Torote",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "valverde-de-alcala",
+    "nombre": "Valverde de Alcalá",
+    "provincia": "Madrid",
+    "poblacion": 1200,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "pezuela-de-las-torres",
+    "nombre": "Pezuela de las Torres",
+    "provincia": "Madrid",
+    "poblacion": 1000,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "olmeda-de-las-fuentes",
+    "nombre": "Olmeda de las Fuentes",
+    "provincia": "Madrid",
+    "poblacion": 400,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "ribatejada",
+    "nombre": "Ribatejada",
+    "provincia": "Madrid",
+    "poblacion": 800,
+    "juzgado": "Juzgado de Primera Instancia de Alcalá de Henares"
+  },
+  {
+    "slug": "valdetorres-de-jarama",
+    "nombre": "Valdetorres de Jarama",
+    "provincia": "Madrid",
+    "poblacion": 1200,
+    "juzgado": "Juzgado de Primera Instancia de Alcobendas"
+  },
+  {
+    "slug": "navalafuente",
+    "nombre": "Navalafuente",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "bustarviejo",
+    "nombre": "Bustarviejo",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "cabanillas-de-la-sierra",
+    "nombre": "Cabanillas de la Sierra",
+    "provincia": "Madrid",
+    "poblacion": 1500,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "venturada",
+    "nombre": "Venturada",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "reduena",
+    "nombre": "Redueña",
+    "provincia": "Madrid",
+    "poblacion": 400,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "buitrago-del-lozoya",
+    "nombre": "Buitrago del Lozoya",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "rascafria",
+    "nombre": "Rascafría",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de Colmenar Viejo"
+  },
+  {
+    "slug": "zarzalejo",
+    "nombre": "Zarzalejo",
+    "provincia": "Madrid",
+    "poblacion": 2000,
+    "juzgado": "Juzgado de Primera Instancia de El Escorial"
+  },
+  {
+    "slug": "cenicientos",
+    "nombre": "Cenicientos",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "valdaracete",
+    "nombre": "Valdaracete",
+    "provincia": "Madrid",
+    "poblacion": 1000,
+    "juzgado": "Juzgado de Primera Instancia de Arganda del Rey"
+  },
+  {
+    "slug": "villamanrique-de-tajo",
+    "nombre": "Villamanrique de Tajo",
+    "provincia": "Madrid",
+    "poblacion": 1500,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  },
+  {
+    "slug": "villamantilla",
+    "nombre": "Villamantilla",
+    "provincia": "Madrid",
+    "poblacion": 1000,
+    "juzgado": "Juzgado de Primera Instancia de Navalcarnero"
+  },
+  {
+    "slug": "fuentiduena-de-tajo",
+    "nombre": "Fuentidueña de Tajo",
+    "provincia": "Madrid",
+    "poblacion": 2500,
+    "juzgado": "Juzgado de Primera Instancia de Aranjuez"
+  }
 ]

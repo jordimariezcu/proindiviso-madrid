@@ -71,7 +71,15 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <p className="text-sm text-gray-400 mt-4">Y {municipios.length - 20} municipios más en la Comunidad de Madrid.</p>
+          <div className="mt-4 flex items-center justify-between">
+            <p className="text-sm text-gray-400">Y {municipios.length - 20} municipios más en la Comunidad de Madrid.</p>
+            <Link
+              href="/municipios-madrid"
+              className="text-sm font-semibold text-navy hover:text-gold transition-colors"
+            >
+              Ver todos los municipios →
+            </Link>
+          </div>
         </section>
 
         {/* Madrid capital — distritos */}
