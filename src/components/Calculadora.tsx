@@ -30,6 +30,7 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
   const [loading, setLoading] = useState(false)
   const [leadId, setLeadId] = useState('')
   const [error, setError] = useState('')
+  const [consentido, setConsentido] = useState(false)
 
   const valorNum = parseFloat(valor.replace(/\./g, '').replace(',', '.')) || 0
   const descuento = calcularDescuento(ocupacion, relacion)
@@ -64,6 +65,10 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
     }
     if (!/^(\+34|0034)?[679]\d{8}$/.test(telefono.replace(/\s/g, ''))) {
       setError('Introduce un teléfono español válido (9 dígitos, empieza por 6, 7 o 9).')
+      return
+    }
+    if (!consentido) {
+      setError('Debes aceptar la política de privacidad para continuar.')
       return
     }
     setLoading(true)
@@ -257,9 +262,27 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
                   <input id="lead-email" type="email" placeholder="Email (opcional)" value={email}
                     onChange={e => setEmail(e.target.value)} className={inputCls} autoComplete="email" />
                 </div>
+                <div className="flex items-start gap-2.5 pt-1">
+                  <input
+                    id="consent-check"
+                    type="checkbox"
+                    checked={consentido}
+                    onChange={e => setConsentido(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-navy cursor-pointer"
+                  />
+                  <label htmlFor="consent-check" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
+                    He leído y acepto la{' '}
+                    <a href="/privacidad" target="_blank" rel="noopener noreferrer"
+                      className="text-navy underline hover:opacity-75">política de privacidad</a>.
+                    {' '}Consiento que mis datos sean tratados para contactarme en relación con mi consulta sobre proindivisos.
+                  </label>
+                </div>
                 {error && <p className="text-red-600 text-sm" role="alert">{error}</p>}
-                <button onClick={handleDesbloquear} disabled={loading}
-                  className="w-full py-3 bg-navy hover:bg-navy-deep disabled:opacity-50 text-white font-semibold rounded-xl transition-colors">
+                <button
+                  onClick={handleDesbloquear}
+                  disabled={loading || !consentido}
+                  className="w-full py-3 bg-navy hover:bg-navy-deep disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-colors"
+                >
                   {loading ? 'Enviando...' : 'Desbloquear informe gratuito'}
                 </button>
                 <p className="text-xs text-gray-500 text-center">Sin spam. Solo te contacta el abogado del caso.</p>
