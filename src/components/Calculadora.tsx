@@ -5,6 +5,7 @@ import { calcularDescuento, formatNumber } from '@/lib/municipios'
 
 interface Props {
   municipio: string
+  precioM2?: number
 }
 
 type Ocupacion = 'vacio' | 'ocupado' | 'alquilado'
@@ -15,7 +16,8 @@ const chipBase = 'px-4 py-2 rounded-full text-sm border transition-all'
 const chipActive = 'bg-navy text-white border-navy'
 const chipInactive = 'bg-white text-gray-700 border-gray-200 hover:border-navy/40'
 
-export default function Calculadora({ municipio }: Props) {
+export default function Calculadora({ municipio, precioM2 }: Props) {
+  const [metros, setMetros] = useState('')
   const [valor, setValor] = useState('')
   const [porcentaje, setPorcentaje] = useState(50)
   const [ocupacion, setOcupacion] = useState<Ocupacion>('vacio')
@@ -95,6 +97,47 @@ export default function Calculadora({ municipio }: Props) {
 
   return (
     <div className="space-y-3">
+
+      {precioM2 && (
+        <div className="bg-navy/5 border border-navy/15 rounded-xl p-5">
+          <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Calculador de valor</p>
+          <p className="font-semibold text-navy mb-3">
+            ¿Cuántos m² tiene la propiedad?
+          </p>
+          <div className="flex items-center gap-3">
+            <div className="relative flex-1">
+              <input
+                type="text" inputMode="numeric" value={metros}
+                onChange={e => {
+                  const m = e.target.value
+                  setMetros(m)
+                  const num = parseFloat(m.replace(',', '.'))
+                  if (num > 0) setValor(Math.round(num * precioM2).toString())
+                  else setValor('')
+                }}
+                placeholder="80"
+                className="w-full pr-10 pl-4 py-2.5 border border-gray-200 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-navy bg-white"
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">m²</span>
+            </div>
+            <div className="text-sm text-gray-400 shrink-0">×</div>
+            <div className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-navy shrink-0">
+              {precioM2.toLocaleString('es-ES')} €/m²
+            </div>
+            {metros && parseFloat(metros) > 0 && (
+              <>
+                <div className="text-sm text-gray-400 shrink-0">=</div>
+                <div className="bg-navy text-white rounded-lg px-3 py-2.5 text-sm font-bold shrink-0">
+                  {Math.round(parseFloat(metros.replace(',', '.')) * precioM2).toLocaleString('es-ES')} €
+                </div>
+              </>
+            )}
+          </div>
+          {metros && parseFloat(metros) > 0 && (
+            <p className="text-xs text-navy/60 mt-2">✓ Valor aplicado automáticamente al Paso 1</p>
+          )}
+        </div>
+      )}
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
         <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Paso 1</p>

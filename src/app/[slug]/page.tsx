@@ -96,19 +96,7 @@ export default async function SlugPage({ params }: Props) {
           {b.nota} Usa la calculadora para saber cuánto vale tu parte y conecta con un abogado especialista en proindivisos en Madrid capital.
         </p>
 
-        {/* Stat cards */}
-        <div className="flex gap-3 mb-8">
-          <div className="bg-navy rounded-lg px-4 py-3 flex items-center gap-3">
-            <p className="text-lg font-bold text-white">{b.precio_m2.toLocaleString('es-ES')}€/m²</p>
-            <p className="text-xs text-white/50">Precio medio zona</p>
-          </div>
-          <div className="bg-white border border-gray-200 rounded-lg px-4 py-3 flex items-center gap-3">
-            <p className="text-lg font-bold text-navy">{(b.precio_m2 * 80).toLocaleString('es-ES')}€</p>
-            <p className="text-xs text-gray-400">Valor estimado 80m²</p>
-          </div>
-        </div>
-
-        <Calculadora municipio={`${b.nombre} (Madrid)`} />
+        <Calculadora municipio={`${b.nombre} (Madrid)`} precioM2={b.precio_m2} />
         <section className="mt-12 space-y-4 text-gray-600 text-sm leading-relaxed">
           <h2 className="text-xl font-bold text-navy">Proindivisos en {b.nombre}: lo que debes saber</h2>
           <p>
