@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { TELEFONO_HREF, TELEFONO_DISPLAY } from '@/lib/config'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://proindiviso-madrid.es'),
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         {children}
+        <Analytics />
         <footer className="mt-16 border-t border-gray-100 bg-white">
           <div className="max-w-2xl mx-auto px-4 py-8">
             <div className="flex flex-col sm:flex-row justify-between gap-4 text-sm text-gray-400">
