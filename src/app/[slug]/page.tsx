@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getMunicipio, getAllSlugs } from '@/lib/municipios'
 import { getBarrio, getAllBarrioSlugs, getBarriosByDistrito } from '@/lib/barrios'
+import { getDistrito, getAllDistritoSlugs } from '@/lib/distritos'
 import Calculadora from '@/components/Calculadora'
 import FAQ from '@/components/FAQ'
 import { TELEFONO_HREF } from '@/lib/config'
@@ -15,6 +16,10 @@ function parseBarrioSlug(slug: string): string | null {
   return slug.match(/^proindiviso-(.+)-madrid-capital$/)?.[1] ?? null
 }
 
+function parseDistritoSlug(slug: string): string | null {
+  return slug.match(/^proindiviso-distrito-(.+)-madrid$/)?.[1] ?? null
+}
+
 function parseMunicipioSlug(slug: string): string | null {
   return slug.match(/^proindiviso-(.+)-madrid$/)?.[1] ?? null
 }
@@ -23,6 +28,7 @@ export async function generateStaticParams() {
   return [
     ...getAllSlugs().map(s => ({ slug: `proindiviso-${s}-madrid` })),
     ...getAllBarrioSlugs().map(s => ({ slug: `proindiviso-${s}-madrid-capital` })),
+    ...getAllDistritoSlugs().map(s => ({ slug: `proindiviso-distrito-${s}-madrid` })),
   ]
 }
 
@@ -41,6 +47,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `Proindiviso ${b.nombre} Madrid — Calcula el valor de tu parte`,
         description: `Valoración gratuita e inmediata. Precio medio zona: ${b.precio_m2.toLocaleString('es-ES')}€/m².`,
       },
+    }
+  }
+
+  const distritoSlug = parseDistritoSlug(slug)
+  if (distritoSlug) {
+    const d = getDistrito(distritoSlug)
+    if (!d) return {}
+    return {
+      title: `Proindiviso en el distrito de ${d.nombre} (Madrid) — Barrios y valoración`,
+      description: `Proindivisos en el distrito de ${d.nombre}, Madrid. ${d.barrios.length} barrios cubiertos. Precio medio ${d.precioMedio.toLocaleString('es-ES')}€/m². Calcula gratis el valor de tu parte.`,
+      keywords: [`proindiviso ${d.nombre} madrid`, `proindiviso distrito ${d.nombre}`, `abogado proindiviso ${d.nombre}`],
     }
   }
 
@@ -66,6 +83,47 @@ export default async function SlugPage({ params }: Props) {
   const { slug } = await params
 
   // Barrio primero (patrón más específico: termina en -madrid-capital)
+  const distritoSlug = parseDistritoSlug(slug)
+  if (distritoSlug) {
+    const d = getDistrito(distritoSlug)
+    if (!d) notFound()
+
+    return (
+      <main className="max-w-5xl mx-auto px-4 py-10">
+        <div className="mb-2">
+          <span className="text-xs text-navy font-semibold uppercase tracking-widest">Madrid capital · Distrito</span>
+        </div>
+        <h1 className="text-3xl font-bold text-navy mb-3">
+          Proindiviso en el distrito de {d.nombre}
+        </h1>
+        <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-2xl">
+          El distrito de {d.nombre} tiene un precio medio de <strong>{d.precioMedio.toLocaleString('es-ES')}€/m²</strong>.
+          Selecciona tu barrio para calcular el valor de tu parte con el precio real de la zona.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          {d.barrios.map(b => (
+            <Link key={b.slug} href={`/proindiviso-${b.slug}-madrid-capital`}
+              className="bg-white border border-gray-200 hover:border-navy rounded-xl p-5 transition-all group">
+              <p className="font-semibold text-navy group-hover:text-navy-deep">{b.nombre}</p>
+              <p className="text-sm text-gray-500 mt-1">{b.precio_m2.toLocaleString('es-ES')} €/m²</p>
+              <p className="text-xs text-gold mt-2 font-medium">Ver calculadora →</p>
+            </Link>
+          ))}
+        </div>
+
+        <section className="bg-cream rounded-2xl border border-navy/10 p-8 text-center">
+          <p className="text-lg font-bold text-navy mb-2">¿No sabes el valor de tu piso en {d.nombre}?</p>
+          <p className="text-sm text-gray-500 mb-5">Nuestro abogado especialista te orienta sin compromiso.</p>
+          <a href={`tel:${TELEFONO_HREF}`}
+            className="inline-block bg-navy hover:bg-navy-deep text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Llamar ahora
+          </a>
+        </section>
+      </main>
+    )
+  }
+
   const barrioSlug = parseBarrioSlug(slug)
   if (barrioSlug) {
     const b = getBarrio(barrioSlug)

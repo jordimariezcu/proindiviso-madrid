@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { municipios } from '@/lib/municipios'
 import { barrios } from '@/lib/barrios'
+import { distritos } from '@/lib/distritos'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://proindiviso-madrid.es'
@@ -24,5 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...municipioPages, ...barrioPages]
+  const distritoPages: MetadataRoute.Sitemap = distritos.map(d => ({
+    url: `${base}/proindiviso-distrito-${d.slug}-madrid`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  return [...staticPages, ...municipioPages, ...barrioPages, ...distritoPages]
 }

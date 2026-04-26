@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { municipios } from '@/lib/municipios'
+import { distritos } from '@/lib/distritos'
 import Calculadora from '@/components/Calculadora'
 import FAQ from '@/components/FAQ'
 import { TELEFONO_HREF } from '@/lib/config'
@@ -71,6 +72,24 @@ export default function HomePage() {
             ))}
           </div>
           <p className="text-sm text-gray-400 mt-4">Y {municipios.length - 20} municipios más en la Comunidad de Madrid.</p>
+        </section>
+
+        {/* Madrid capital — distritos */}
+        <section>
+          <h2 className="text-2xl font-bold text-navy mb-2">Proindiviso en Madrid capital</h2>
+          <p className="text-gray-500 text-sm mb-5">Selecciona tu distrito para ver la calculadora con el precio real de la zona.</p>
+          <div className="flex flex-wrap gap-2">
+            {distritos.map(d => (
+              <Link
+                key={d.slug}
+                href={`/proindiviso-distrito-${d.slug}-madrid`}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 hover:border-navy hover:text-navy rounded-full text-sm text-gray-700 transition-all"
+              >
+                {d.nombre}
+                <span className="text-xs text-gray-400">{d.barrios.length > 1 ? `${d.barrios.length} barrios` : '1 barrio'}</span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Qué es */}
