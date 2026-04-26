@@ -86,18 +86,32 @@ export default async function SlugPage({ params }: Props) {
     return (
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
-        <div className="mb-2 flex items-center gap-2 flex-wrap">
+        <div className="mb-2">
           <span className="text-xs text-gold font-semibold uppercase tracking-widest">{b.distrito} · Madrid capital</span>
-          <span className="text-xs bg-gold/10 text-navy px-2 py-0.5 rounded-full font-medium">
-            Precio medio zona: {b.precio_m2.toLocaleString('es-ES')}€/m²
-          </span>
         </div>
         <h1 className="text-3xl font-bold text-navy mb-3 leading-tight">
           Proindiviso en {b.nombre}: calcula el valor de tu parte gratis
         </h1>
-        <p className="text-gray-500 text-base leading-relaxed mb-8">
+        <p className="text-gray-500 text-base leading-relaxed mb-6">
           {b.nota} Usa la calculadora para saber cuánto vale tu parte y conecta con un abogado especialista en proindivisos en Madrid capital.
         </p>
+
+        {/* Stat cards */}
+        <div className="grid grid-cols-3 gap-3 mb-8">
+          <div className="bg-navy rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-white">{b.precio_m2.toLocaleString('es-ES')}€</p>
+            <p className="text-xs text-white/60 mt-1">Precio medio/m²</p>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-navy">{(b.precio_m2 * 80).toLocaleString('es-ES')}€</p>
+            <p className="text-xs text-gray-400 mt-1">Valor piso 80m²</p>
+          </div>
+          <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
+            <p className="text-2xl font-bold text-gold">30–50%</p>
+            <p className="text-xs text-gray-400 mt-1">Descuento proindiviso</p>
+          </div>
+        </div>
+
         <Calculadora municipio={`${b.nombre} (Madrid)`} />
         <section className="mt-12 space-y-4 text-gray-600 text-sm leading-relaxed">
           <h2 className="text-xl font-bold text-navy">Proindivisos en {b.nombre}: lo que debes saber</h2>
