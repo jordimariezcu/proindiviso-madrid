@@ -15,56 +15,111 @@ const topMunicipios = municipios.slice(0, 20)
 
 export default function HomePage() {
   return (
-    <main className="max-w-2xl mx-auto px-4 py-10">
-      <div className="mb-2">
-        <span className="text-xs text-blue-600 font-medium uppercase tracking-widest">Comunidad de Madrid</span>
-      </div>
-      <h1 className="text-3xl font-semibold text-gray-900 mb-3 leading-tight">
-        Proindiviso en Madrid: calcula el valor de tu parte gratis
-      </h1>
-      <p className="text-gray-500 text-base leading-relaxed mb-8">
-        ¿Tienes un piso o local en proindiviso y no sabes qué vale tu parte?
-        Calcula en segundos, recibe una valoración real y conecta con un abogado especialista. Sin compromiso.
-      </p>
+    <main>
 
-      <Calculadora municipio="Madrid" />
-
-      <section className="mt-12">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Cobertura en todos los municipios de Madrid</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          {topMunicipios.map(m => (
-            <Link key={m.slug} href={`/proindiviso-${m.slug}-madrid`}
-              className="text-sm text-blue-600 hover:text-blue-800 hover:underline py-1">
-              {m.nombre}
-            </Link>
-          ))}
+      {/* Hero */}
+      <section className="bg-cream border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="inline-block text-xs font-semibold text-gold uppercase tracking-widest mb-3">
+              Especialistas en proindivisos · Madrid
+            </span>
+            <h1 className="text-4xl font-bold text-navy leading-tight mb-4">
+              Calcula el valor de tu parte en un proindiviso
+            </h1>
+            <p className="text-gray-500 text-base leading-relaxed mb-6">
+              ¿Tienes un piso o local en proindiviso y no sabes qué vale tu parte?
+              Calcula en segundos, recibe una valoración real y conecta con un abogado especialista. Sin compromiso.
+            </p>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                <span className="text-gray-600">Valoración gratuita</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                <span className="text-gray-600">Sin juicio si hay acuerdo</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                <span className="text-gray-600">Respuesta en 2 horas</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <Calculadora municipio="Madrid" />
+          </div>
         </div>
-        <p className="text-sm text-gray-400 mt-3">Y {municipios.length - 20} municipios más en la Comunidad de Madrid.</p>
       </section>
 
-      <section className="mt-12 space-y-4 text-gray-600 text-sm leading-relaxed">
-        <h2 className="text-xl font-semibold text-gray-900">¿Qué es un proindiviso y cómo se resuelve?</h2>
-        <p>
-          Un proindiviso surge cuando dos o más personas son copropietarias de un mismo inmueble,
-          habitualmente tras una herencia, un divorcio o una compra conjunta. La situación puede
-          volverse conflictiva cuando los copropietarios no se ponen de acuerdo sobre qué hacer con el bien.
-        </p>
-        <p>
-          En Madrid existen varias vías de resolución: venta pactada, venta de cuota a tercero especializado
-          o acción judicial de extinción de condominio. La estrategia óptima depende de la relación entre
-          propietarios, el valor del inmueble y la urgencia de la situación.
-        </p>
-      </section>
+      {/* Cuerpo */}
+      <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
 
-      <FAQ />
+        {/* Municipios */}
+        <section>
+          <h2 className="text-2xl font-bold text-navy mb-2">Cobertura en todos los municipios de Madrid</h2>
+          <p className="text-gray-500 text-sm mb-5">Selecciona tu municipio para ver la calculadora personalizada con el juzgado competente.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {topMunicipios.map(m => (
+              <Link
+                key={m.slug}
+                href={`/proindiviso-${m.slug}-madrid`}
+                className="text-sm text-navy hover:text-gold font-medium py-1.5 border-b border-gray-100 hover:border-gold transition-colors"
+              >
+                {m.nombre}
+              </Link>
+            ))}
+          </div>
+          <p className="text-sm text-gray-400 mt-4">Y {municipios.length - 20} municipios más en la Comunidad de Madrid.</p>
+        </section>
 
-      <section className="mt-12 bg-blue-50 rounded-xl p-6 text-center">
-        <p className="text-lg font-semibold text-gray-900 mb-1">¿Tienes dudas? Te llamamos</p>
-        <p className="text-sm text-gray-500 mb-4">Consulta gratuita con nuestro abogado especialista en proindivisos.</p>
-        <a href={`tel:${TELEFONO_HREF}`} className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
-          Llamar gratis
-        </a>
-      </section>
+        {/* Qué es */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-2xl font-bold text-navy mb-4">¿Qué es un proindiviso y cómo se resuelve?</h2>
+            <p className="text-gray-500 text-sm leading-relaxed mb-3">
+              Un proindiviso surge cuando dos o más personas son copropietarias de un mismo inmueble,
+              habitualmente tras una herencia, un divorcio o una compra conjunta. La situación puede
+              volverse conflictiva cuando los copropietarios no se ponen de acuerdo.
+            </p>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              En Madrid existen varias vías de resolución: venta pactada, venta de cuota a tercero especializado
+              o acción judicial de extinción de condominio. La estrategia óptima depende de la relación entre
+              propietarios, el valor del inmueble y la urgencia de la situación.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {[
+              { paso: '01', titulo: 'Valoración', desc: 'Calculamos el valor real de tu parte aplicando el descuento de mercado.' },
+              { paso: '02', titulo: 'Estrategia', desc: 'El abogado analiza la vía más rápida: acuerdo, venta o juicio.' },
+              { paso: '03', titulo: 'Resolución', desc: 'Gestión completa hasta la firma ante notario o sentencia judicial.' },
+            ].map(({ paso, titulo, desc }) => (
+              <div key={paso} className="flex gap-4 items-start">
+                <span className="text-xs font-bold text-gold bg-gold/10 rounded-lg px-2.5 py-1.5 shrink-0">{paso}</span>
+                <div>
+                  <p className="font-semibold text-navy text-sm mb-0.5">{titulo}</p>
+                  <p className="text-gray-500 text-sm">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <FAQ />
+
+        {/* CTA final */}
+        <section className="bg-navy rounded-2xl p-8 sm:p-10 text-center">
+          <p className="text-xl font-bold text-white mb-2">¿Tienes dudas? Te llamamos</p>
+          <p className="text-sm text-white/60 mb-6">Consulta gratuita con nuestro abogado especialista en proindivisos.</p>
+          <a
+            href={`tel:${TELEFONO_HREF}`}
+            className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-10 py-3.5 rounded-xl transition-colors shadow-sm"
+          >
+            Llamar gratis
+          </a>
+        </section>
+
+      </div>
     </main>
   )
 }

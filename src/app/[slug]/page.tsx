@@ -87,12 +87,12 @@ export default async function SlugPage({ params }: Props) {
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
         <div className="mb-2 flex items-center gap-2 flex-wrap">
-          <span className="text-xs text-blue-600 font-medium uppercase tracking-widest">{b.distrito} · Madrid capital</span>
-          <span className="text-xs bg-amber-50 text-amber-800 px-2 py-0.5 rounded-full font-medium">
+          <span className="text-xs text-gold font-semibold uppercase tracking-widest">{b.distrito} · Madrid capital</span>
+          <span className="text-xs bg-gold/10 text-navy px-2 py-0.5 rounded-full font-medium">
             Precio medio zona: {b.precio_m2.toLocaleString('es-ES')}€/m²
           </span>
         </div>
-        <h1 className="text-3xl font-semibold text-gray-900 mb-3 leading-tight">
+        <h1 className="text-3xl font-bold text-navy mb-3 leading-tight">
           Proindiviso en {b.nombre}: calcula el valor de tu parte gratis
         </h1>
         <p className="text-gray-500 text-base leading-relaxed mb-8">
@@ -100,7 +100,7 @@ export default async function SlugPage({ params }: Props) {
         </p>
         <Calculadora municipio={`${b.nombre} (Madrid)`} />
         <section className="mt-12 space-y-4 text-gray-600 text-sm leading-relaxed">
-          <h2 className="text-xl font-semibold text-gray-900">Proindivisos en {b.nombre}: lo que debes saber</h2>
+          <h2 className="text-xl font-bold text-navy">Proindivisos en {b.nombre}: lo que debes saber</h2>
           <p>
             El barrio de {b.nombre}, en el distrito de {b.distrito}, tiene un precio medio
             de <strong>{b.precio_m2.toLocaleString('es-ES')}€/m²</strong>. Esto significa que un piso
@@ -121,21 +121,21 @@ export default async function SlugPage({ params }: Props) {
         </section>
         {barriosDistrito.length > 0 && (
           <section className="mt-10">
-            <h3 className="text-base font-medium text-gray-900 mb-3">Otros barrios del distrito {b.distrito}</h3>
+            <h3 className="text-base font-semibold text-navy mb-3">Otros barrios del distrito {b.distrito}</h3>
             <div className="flex flex-wrap gap-2">
               {barriosDistrito.map(bx => (
                 <Link key={bx.slug} href={`/proindiviso-${bx.slug}-madrid-capital`}
-                  className="text-sm text-blue-600 hover:text-blue-800 hover:underline">{bx.nombre}</Link>
+                  className="text-sm text-navy hover:text-gold transition-colors">{bx.nombre}</Link>
               ))}
             </div>
           </section>
         )}
         <FAQ municipio={b.nombre} />
-        <section className="mt-12 bg-blue-50 rounded-xl p-6 text-center">
-          <p className="text-lg font-semibold text-gray-900 mb-1">¿Prefieres hablar directamente?</p>
+        <section className="mt-12 bg-cream rounded-2xl border border-gold/20 p-6 text-center">
+          <p className="text-lg font-bold text-navy mb-1">¿Prefieres hablar directamente?</p>
           <p className="text-sm text-gray-500 mb-4">Nuestro abogado especialista en {b.nombre} te atiende sin compromiso.</p>
           <a href={`tel:${TELEFONO_HREF}`}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
+            className="inline-block bg-navy hover:bg-navy-deep text-white font-medium px-8 py-3 rounded-xl transition-colors">
             Llamar ahora
           </a>
         </section>
@@ -163,9 +163,9 @@ export default async function SlugPage({ params }: Props) {
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
         <div className="mb-2">
-          <span className="text-xs text-blue-600 font-medium uppercase tracking-widest">{m.nombre} · Madrid</span>
+          <span className="text-xs text-gold font-semibold uppercase tracking-widest">{m.nombre} · Madrid</span>
         </div>
-        <h1 className="text-3xl font-semibold text-gray-900 mb-3 leading-tight">
+        <h1 className="text-3xl font-bold text-navy mb-3 leading-tight">
           Proindiviso en {m.nombre}: calcula el valor de tu parte gratis
         </h1>
         <p className="text-gray-500 text-base leading-relaxed mb-8">
@@ -175,7 +175,7 @@ export default async function SlugPage({ params }: Props) {
         </p>
         <Calculadora municipio={m.nombre} />
         <section className="mt-12 space-y-6 text-gray-600 text-sm leading-relaxed">
-          <h2 className="text-xl font-semibold text-gray-900">Cómo se resuelve un proindiviso en {m.nombre}</h2>
+          <h2 className="text-xl font-bold text-navy">Cómo se resuelve un proindiviso en {m.nombre}</h2>
           <p>
             Los proindivisos en {m.nombre} se tramitan ante el <strong>{m.juzgado}</strong> cuando
             es necesaria la vía judicial. Sin embargo, la mayoría de los casos se resuelven antes de
@@ -193,11 +193,11 @@ export default async function SlugPage({ params }: Props) {
           </p>
         </section>
         <FAQ municipio={m.nombre} />
-        <section className="mt-12 bg-blue-50 rounded-xl p-6 text-center">
-          <p className="text-lg font-semibold text-gray-900 mb-1">¿Prefieres hablar directamente?</p>
+        <section className="mt-12 bg-cream rounded-2xl border border-gold/20 p-6 text-center">
+          <p className="text-lg font-bold text-navy mb-1">¿Prefieres hablar directamente?</p>
           <p className="text-sm text-gray-500 mb-4">Nuestro abogado especialista en {m.nombre} te atiende sin compromiso.</p>
           <a href={`tel:${TELEFONO_HREF}`}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-xl transition-colors">
+            className="inline-block bg-navy hover:bg-navy-deep text-white font-medium px-8 py-3 rounded-xl transition-colors">
             Llamar ahora
           </a>
         </section>

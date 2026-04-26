@@ -51,7 +51,7 @@ export default function FAQ({ municipio }: { municipio?: string }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+      <h2 className="text-2xl font-bold text-navy mb-2">
         Preguntas frecuentes sobre proindivisos{municipio ? ` en ${municipio}` : ''}
       </h2>
       <p className="text-gray-500 mb-6">Todo lo que necesitas saber antes de tomar una decisión.</p>
@@ -62,8 +62,8 @@ export default function FAQ({ municipio }: { municipio?: string }) {
               onClick={() => setOpen(open === i ? null : i)}
               className="w-full flex justify-between items-center text-left gap-4"
             >
-              <span className="font-medium text-gray-900">{faq.q}</span>
-              <span className={`text-gray-400 text-xl flex-shrink-0 transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
+              <span className="font-semibold text-navy text-sm">{faq.q}</span>
+              <span className={`text-gold text-xl flex-shrink-0 transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
             </button>
             {open === i && (
               <p className="mt-3 text-gray-600 leading-relaxed text-sm">{faq.a}</p>
