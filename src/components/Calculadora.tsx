@@ -121,8 +121,9 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">m²</span>
             </div>
             <div className="text-sm text-gray-400 shrink-0">×</div>
-            <div className="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-navy shrink-0">
-              {precioM2.toLocaleString('es-ES')} €/m²
+            <div className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-center shrink-0">
+              <p className="text-sm font-semibold text-navy">{precioM2.toLocaleString('es-ES')} €/m²</p>
+              <p className="text-xs text-gray-400">precio medio zona</p>
             </div>
             {metros && parseFloat(metros) > 0 && (
               <>
