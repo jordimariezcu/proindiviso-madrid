@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getMunicipio, getAllSlugs } from '@/lib/municipios'
 import { getBarrio, getAllBarrioSlugs, getBarriosByDistrito } from '@/lib/barrios'
-import { getDistrito, getAllDistritoSlugs } from '@/lib/distritos'
+import { getDistrito, getAllDistritoSlugs, distritos } from '@/lib/distritos'
 import Calculadora from '@/components/Calculadora'
 import FAQ from '@/components/FAQ'
 import { TELEFONO_HREF } from '@/lib/config'
@@ -57,7 +57,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: `Proindiviso en el distrito de ${d.nombre} (Madrid) — Barrios y valoración`,
       description: `Proindivisos en el distrito de ${d.nombre}, Madrid. ${d.barrios.length} barrios cubiertos. Precio medio ${d.precioMedio.toLocaleString('es-ES')}€/m². Calcula gratis el valor de tu parte.`,
-      keywords: [`proindiviso ${d.nombre} madrid`, `proindiviso distrito ${d.nombre}`, `abogado proindiviso ${d.nombre}`],
+      keywords: [`proindiviso ${d.nombre} madrid`, `proindiviso distrito ${d.nombre}`, `abogado proindiviso ${d.nombre}`, `vender proindiviso ${d.nombre}`, `extincion condominio ${d.nombre}`],
+      openGraph: {
+        title: `Proindiviso distrito ${d.nombre} Madrid — ${d.barrios.length} barrios`,
+        description: `Precio medio ${d.precioMedio.toLocaleString('es-ES')}€/m². Calcula gratis el valor de tu parte en ${d.nombre}.`,
+      },
     }
   }
 
@@ -82,7 +86,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SlugPage({ params }: Props) {
   const { slug } = await params
 
-  // Barrio primero (patrón más específico: termina en -madrid-capital)
+  // Orden: distrito → barrio → municipio (del más específico al más general)
   const distritoSlug = parseDistritoSlug(slug)
   if (distritoSlug) {
     const d = getDistrito(distritoSlug)
@@ -90,6 +94,13 @@ export default async function SlugPage({ params }: Props) {
 
     return (
       <main className="max-w-5xl mx-auto px-4 py-10">
+        <nav className="text-xs text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-navy transition-colors">Inicio</Link>
+          <span className="mx-2">›</span>
+          <Link href="/proindiviso-madrid-madrid" className="hover:text-navy transition-colors">Madrid capital</Link>
+          <span className="mx-2">›</span>
+          <span className="text-navy font-medium">Distrito {d.nombre}</span>
+        </nav>
         <div className="mb-2">
           <span className="text-xs text-navy font-semibold uppercase tracking-widest">Madrid capital · Distrito</span>
         </div>
@@ -144,6 +155,15 @@ export default async function SlugPage({ params }: Props) {
     return (
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
+        <nav className="text-xs text-gray-400 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-navy transition-colors">Inicio</Link>
+          <span className="mx-2">›</span>
+          <Link href="/proindiviso-madrid-madrid" className="hover:text-navy transition-colors">Madrid capital</Link>
+          <span className="mx-2">›</span>
+          <Link href={`/proindiviso-distrito-${distritos.find(d => d.nombre === b.distrito)?.slug ?? ''}-madrid`} className="hover:text-navy transition-colors">{b.distrito}</Link>
+          <span className="mx-2">›</span>
+          <span className="text-navy font-medium">{b.nombre}</span>
+        </nav>
         <div className="mb-2">
           <span className="text-xs text-navy font-semibold uppercase tracking-widest">{b.distrito} · Madrid capital</span>
         </div>
