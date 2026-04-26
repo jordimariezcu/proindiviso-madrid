@@ -87,7 +87,7 @@ export default async function SlugPage({ params }: Props) {
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
         <div className="mb-2">
-          <span className="text-xs text-gold font-semibold uppercase tracking-widest">{b.distrito} · Madrid capital</span>
+          <span className="text-xs text-navy font-semibold uppercase tracking-widest">{b.distrito} · Madrid capital</span>
         </div>
         <h1 className="text-3xl font-bold text-navy mb-3 leading-tight">
           Proindiviso en {b.nombre}: calcula el valor de tu parte gratis
@@ -161,7 +161,7 @@ export default async function SlugPage({ params }: Props) {
       <main className="max-w-2xl mx-auto px-4 py-10">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocal) }} />
         <div className="mb-2">
-          <span className="text-xs text-gold font-semibold uppercase tracking-widest">{m.nombre} · Madrid</span>
+          <span className="text-xs text-navy font-semibold uppercase tracking-widest">{m.nombre} · Madrid</span>
         </div>
         <h1 className="text-3xl font-bold text-navy mb-3 leading-tight">
           Proindiviso en {m.nombre}: calcula el valor de tu parte gratis

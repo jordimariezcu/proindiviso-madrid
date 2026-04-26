@@ -21,7 +21,7 @@ export default function HomePage() {
       <section className="bg-cream border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="inline-block text-xs font-semibold text-gold uppercase tracking-widest mb-3">
+            <span className="inline-block text-xs font-semibold text-navy uppercase tracking-widest mb-3">
               Especialistas en proindivisos · Madrid
             </span>
             <h1 className="text-4xl font-bold text-navy leading-tight mb-4">
@@ -33,15 +33,15 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                <span className="w-2 h-2 rounded-full bg-navy inline-block"></span>
                 <span className="text-gray-600">Valoración gratuita</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                <span className="w-2 h-2 rounded-full bg-navy inline-block"></span>
                 <span className="text-gray-600">Sin juicio si hay acuerdo</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold inline-block"></span>
+                <span className="w-2 h-2 rounded-full bg-navy inline-block"></span>
                 <span className="text-gray-600">Respuesta en 2 horas</span>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function HomePage() {
               { paso: '03', titulo: 'Resolución', desc: 'Gestión completa hasta la firma ante notario o sentencia judicial.' },
             ].map(({ paso, titulo, desc }) => (
               <div key={paso} className="flex gap-4 items-start">
-                <span className="text-xs font-bold text-gold bg-gold/10 rounded-lg px-2.5 py-1.5 shrink-0">{paso}</span>
+                <span className="text-xs font-bold text-navy bg-navy/10 rounded-lg px-2.5 py-1.5 shrink-0">{paso}</span>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-0.5">{titulo}</p>
                   <p className="text-gray-500 text-sm">{desc}</p>

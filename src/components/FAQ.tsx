@@ -60,14 +60,21 @@ export default function FAQ({ municipio }: { municipio?: string }) {
           <div key={i} className="py-4">
             <button
               onClick={() => setOpen(open === i ? null : i)}
+              aria-expanded={open === i}
+              aria-controls={`faq-answer-${i}`}
               className="w-full flex justify-between items-center text-left gap-4"
             >
               <span className="font-semibold text-navy text-sm">{faq.q}</span>
-              <span className={`text-gold text-xl flex-shrink-0 transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`}>+</span>
+              <span className={`text-navy text-xl flex-shrink-0 transition-transform duration-200 ${open === i ? 'rotate-45' : ''}`} aria-hidden="true">+</span>
             </button>
-            {open === i && (
+            <div
+              id={`faq-answer-${i}`}
+              role="region"
+              aria-labelledby={`faq-btn-${i}`}
+              hidden={open !== i}
+            >
               <p className="mt-3 text-gray-600 leading-relaxed text-sm">{faq.a}</p>
-            )}
+            </div>
           </div>
         ))}
       </div>

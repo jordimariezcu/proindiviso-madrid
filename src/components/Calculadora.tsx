@@ -100,13 +100,14 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
 
       {precioM2 && (
         <div className="bg-navy/5 border border-navy/15 rounded-xl p-5">
-          <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Calculador de valor</p>
-          <p className="font-semibold text-navy mb-3">
+          <p className="text-xs font-semibold text-navy uppercase tracking-widest mb-1">Calculador de valor</p>
+          <label htmlFor="calc-metros" className="block font-semibold text-navy mb-3">
             ¿Cuántos m² tiene la propiedad?
-          </p>
-          <div className="flex items-center gap-3">
-            <div className="relative flex-1">
+          </label>
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="relative">
               <input
+                id="calc-metros"
                 type="text" inputMode="numeric" value={metros}
                 onChange={e => {
                   const m = e.target.value
@@ -116,18 +117,19 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
                   else setValor('')
                 }}
                 placeholder="80"
-                className="w-full pr-10 pl-4 py-2.5 border border-gray-200 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-navy bg-white"
+                aria-label="Superficie en metros cuadrados"
+                className="w-28 pr-10 pl-4 py-2.5 border border-gray-200 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-navy bg-white"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">m²</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" aria-hidden="true">m²</span>
             </div>
-            <div className="text-sm text-gray-400 shrink-0">×</div>
+            <span className="text-sm text-gray-400" aria-hidden="true">×</span>
             <div className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-center shrink-0">
               <p className="text-sm font-semibold text-navy">{precioM2.toLocaleString('es-ES')} €/m²</p>
-              <p className="text-xs text-gray-400">precio medio zona</p>
+              <p className="text-xs text-gray-500">precio medio zona</p>
             </div>
             {metros && parseFloat(metros) > 0 && (
               <>
-                <div className="text-sm text-gray-400 shrink-0">=</div>
+                <span className="text-sm text-gray-400" aria-hidden="true">=</span>
                 <div className="bg-navy text-white rounded-lg px-3 py-2.5 text-sm font-bold shrink-0">
                   {Math.round(parseFloat(metros.replace(',', '.')) * precioM2).toLocaleString('es-ES')} €
                 </div>
@@ -141,59 +143,69 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
       )}
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-        <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Paso 1</p>
-        <p className="font-semibold text-navy mb-3">Valor estimado de mercado</p>
+        <p className="text-xs font-semibold text-navy/50 uppercase tracking-widest mb-1">Paso 1</p>
+        <label htmlFor="valor-inmueble" className="block font-semibold text-navy mb-3">
+          Valor estimado de mercado
+        </label>
         <div className="relative">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">€</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium" aria-hidden="true">€</span>
           <input
+            id="valor-inmueble"
             type="text" inputMode="numeric" value={valor}
             onChange={e => setValor(e.target.value)}
             placeholder="250.000"
+            aria-label="Valor estimado del inmueble en euros"
             className="w-full pl-8 pr-4 py-2.5 border border-gray-200 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-navy"
           />
         </div>
       </div>
 
       <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-        <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Paso 2</p>
-        <p className="font-semibold text-navy mb-3">Tu porcentaje de propiedad</p>
+        <p className="text-xs font-semibold text-navy/50 uppercase tracking-widest mb-1">Paso 2</p>
+        <label htmlFor="porcentaje-propiedad" className="block font-semibold text-navy mb-3">
+          Tu porcentaje de propiedad
+        </label>
         <div className="flex items-center gap-4">
           <input
+            id="porcentaje-propiedad"
             type="range" min="1" max="99" step="1" value={porcentaje}
             onChange={e => setPorcentaje(Number(e.target.value))}
+            aria-label={`Porcentaje de propiedad: ${porcentaje}%`}
             className="flex-1 h-2 accent-navy"
           />
-          <span className="text-xl font-semibold text-navy w-16 text-right">{porcentaje}%</span>
+          <span className="text-xl font-semibold text-navy w-16 text-right" aria-live="polite">{porcentaje}%</span>
         </div>
       </div>
 
-      <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-        <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Paso 3</p>
-        <p className="font-semibold text-navy mb-3">Estado de ocupación</p>
+      <fieldset className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+        <legend className="text-xs font-semibold text-navy/50 uppercase tracking-widest mb-1 float-left w-full">Paso 3</legend>
+        <p className="font-semibold text-navy mb-3 mt-5">Estado de ocupación</p>
         <div className="flex flex-wrap gap-2">
           {(['vacio', 'ocupado', 'alquilado'] as Ocupacion[]).map(o => (
             <button key={o} onClick={() => setOcupacion(o)}
+              aria-pressed={ocupacion === o}
               className={`${chipBase} ${ocupacion === o ? chipActive : chipInactive}`}>
               {ocupacionLabels[o]}
             </button>
           ))}
         </div>
-      </div>
+      </fieldset>
 
-      <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-        <p className="text-xs text-gold font-semibold uppercase tracking-widest mb-1">Paso 4</p>
-        <p className="font-semibold text-navy mb-3">Relación entre propietarios</p>
+      <fieldset className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+        <legend className="text-xs font-semibold text-navy/50 uppercase tracking-widest mb-1 float-left w-full">Paso 4</legend>
+        <p className="font-semibold text-navy mb-3 mt-5">Relación entre propietarios</p>
         <div className="flex flex-wrap gap-2">
           {(['buena', 'tensa', 'ninguna'] as Relacion[]).map(r => (
             <button key={r} onClick={() => setRelacion(r)}
+              aria-pressed={relacion === r}
               className={`${chipBase} ${relacion === r ? chipActive : chipInactive}`}>
               {relacionLabels[r]}
             </button>
           ))}
         </div>
-      </div>
+      </fieldset>
 
-      {error && <p className="text-red-600 text-sm">{error}</p>}
+      {error && <p className="text-red-600 text-sm" role="alert">{error}</p>}
 
       {!showResult && (
         <button onClick={handleCalcular}
@@ -204,7 +216,7 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
 
       {showResult && (
         <div className="relative bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-          <div className={`p-5 space-y-2 ${!unlocked ? 'blur-sm select-none pointer-events-none' : ''}`}>
+          <div className={`p-5 space-y-2 ${!unlocked ? 'blur-sm select-none pointer-events-none' : ''}`} aria-hidden={!unlocked}>
             <p className="font-semibold text-navy mb-3">Tu informe de valoración</p>
             {[
               ['Valor total del inmueble', `€${formatNumber(valorNum)}`],
@@ -215,7 +227,7 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
               ['Tiempo estimado de resolución', tiempo],
             ].map(([label, value, highlight]) => (
               <div key={label as string} className="flex justify-between items-baseline py-2 border-b border-gray-100 last:border-0">
-                <span className="text-sm text-gray-500">{label as string}</span>
+                <span className="text-sm text-gray-600">{label as string}</span>
                 <span className={`font-semibold ${highlight ? 'text-2xl text-navy' : 'text-base text-gray-900'}`}>
                   {value as string}
                 </span>
@@ -226,25 +238,37 @@ export default function Calculadora({ municipio, precioM2 }: Props) {
           {!unlocked && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/85 backdrop-blur-sm p-6">
               <p className="text-lg font-semibold text-navy mb-1 text-center">Tu valoración está lista</p>
-              <p className="text-sm text-gray-500 mb-5 text-center">
+              <p className="text-sm text-gray-600 mb-5 text-center">
                 Déjanos tu teléfono y te la enviamos ahora mismo.
               </p>
               <div className="w-full max-w-sm space-y-3">
-                <input type="text" placeholder="Tu nombre" value={nombre} onChange={e => setNombre(e.target.value)} className={inputCls} />
-                <input type="tel" placeholder="Tu teléfono" value={telefono} onChange={e => setTelefono(e.target.value)} className={inputCls} />
-                <input type="email" placeholder="Email (opcional)" value={email} onChange={e => setEmail(e.target.value)} className={inputCls} />
-                {error && <p className="text-red-600 text-sm">{error}</p>}
+                <div>
+                  <label htmlFor="lead-nombre" className="sr-only">Tu nombre</label>
+                  <input id="lead-nombre" type="text" placeholder="Tu nombre" value={nombre}
+                    onChange={e => setNombre(e.target.value)} className={inputCls} />
+                </div>
+                <div>
+                  <label htmlFor="lead-telefono" className="sr-only">Tu teléfono</label>
+                  <input id="lead-telefono" type="tel" placeholder="Tu teléfono" value={telefono}
+                    onChange={e => setTelefono(e.target.value)} className={inputCls} autoComplete="tel" />
+                </div>
+                <div>
+                  <label htmlFor="lead-email" className="sr-only">Email (opcional)</label>
+                  <input id="lead-email" type="email" placeholder="Email (opcional)" value={email}
+                    onChange={e => setEmail(e.target.value)} className={inputCls} autoComplete="email" />
+                </div>
+                {error && <p className="text-red-600 text-sm" role="alert">{error}</p>}
                 <button onClick={handleDesbloquear} disabled={loading}
                   className="w-full py-3 bg-navy hover:bg-navy-deep disabled:opacity-50 text-white font-semibold rounded-xl transition-colors">
                   {loading ? 'Enviando...' : 'Desbloquear informe gratuito'}
                 </button>
-                <p className="text-xs text-gray-400 text-center">Sin spam. Solo te contacta el abogado del caso.</p>
+                <p className="text-xs text-gray-500 text-center">Sin spam. Solo te contacta el abogado del caso.</p>
               </div>
             </div>
           )}
 
           {unlocked && leadId && (
-            <div className="mt-4 mx-5 mb-5 bg-green-50 text-green-800 border border-green-200 rounded-lg p-3 text-sm text-center">
+            <div className="mt-4 mx-5 mb-5 bg-green-50 text-green-800 border border-green-200 rounded-lg p-3 text-sm text-center" role="status">
               Perfecto, {nombre}. Te llamamos en menos de 2 horas. Referencia: <strong>{leadId}</strong>
             </div>
           )}
